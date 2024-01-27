@@ -1,4 +1,5 @@
-title: py_proj_template
-description: Enter project description here
+title: py_canalyzer
+description: Python package for controlling Vector CANalyzer tool
 show_downloads: true
+google_analytics:
 theme: jekyll-theme-hacker

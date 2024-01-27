@@ -1,0 +1,91 @@
+variables
+{
+    //Example for using CAPL with Basic Diagnostics
+    //Read some diagnostic data from an ECU and display on panel 
+
+    //definitions for diagnostic services' and parameters' names can be
+    //obtained by right-clicking in the CAPL browser edit area
+    diagRequest BasicDiagECU.DefaultSession_Start    DefaultSession_Start_Req;
+    diagRequest BasicDiagECU.SerialNumber_Read       SerialNumber_Read_Req;
+    diagRequest BasicDiagECU.WindowLifterSpeed_Read  WindowLifterSpeed_Read_Req;
+
+    const int cButtonPressed  = 1;
+    const int cButtonReleased = 0;
+
+    const int cDefaultDiagSession = 1;
+    const int cOtherDiagSession   = 0;
+
+}
+
+on message can1.*
+{
+  if(this.CAN == 1)
+  {
+    //forward all incoming messages to subsequent blocks
+    output(this);
+  }
+}
+
+on diagResponse BasicDiagECU.DefaultSession_Start
+{
+  //check if the ECU has sent a positive response
+  if(this.IsPositiveResponse())
+  {
+    @sysvar::BasicDiagnosticsPanel::SessionStarted = cDefaultDiagSession;
+  }
+  else
+  {
+     write("BasicDiagTester: Unexpected negative response received. Terminating sequence.");
+     @sysvar::BasicDiagnosticsPanel::SessionStarted = cOtherDiagSession;
+  }
+}
+
+on sysvar sysvar::BasicDiagnosticsPanel::Send_StartSession
+{
+    //if button is pressed, tell the ECU we want to switch to default session
+    if (@this == cButtonPressed)
+      DefaultSession_Start_Req.SendRequest();
+}
+
+on sysvar sysvar::BasicDiagnosticsPanel::Send_SerialNumberRead
+{
+    //if button is pressed, request serial number from ECU
+    if (@this == cButtonPressed)
+      SerialNumber_Read_Req.SendRequest();
+}
+
+on diagResponse BasicDiagECU.SerialNumber_Read
+{
+  //check if the ECU has sent a positive response
+  if(this.IsPositiveResponse())
+  {
+    //Process response
+    // Reading the values of symbolical parameters from a response object is generally done 
+    // with the "GetParameter..." diagnostic functions
+    @sysvar::BasicDiagnosticsPanel::SerialNumber = this.GetParameter ("SerialNumber");
+  }
+  else
+   write("BasicDiagTester: Unexpected negative response received.");
+}
+
+on sysvar sysvar::BasicDiagnosticsPanel::Send_WindowLifterSpeedRead
+{
+    //if button is pressed, request window lifter speed from ECU
+    if (@this == cButtonPressed)
+      WindowLifterSpeed_Read_Req.SendRequest();
+}
+
+on diagResponse BasicDiagECU.WindowLifterSpeed_Read
+{
+  //check if the ECU has sent a positive response
+  if(this.IsPositiveResponse())
+  {
+    //Process response
+    // Reading the values of symbolical parameters from a response object is generally done 
+    // with the "GetParameter..." diagnostic functions
+    @sysvar::BasicDiagnosticsPanel::WindowLifterSpeed = this.GetParameter ("LifterSpeed");
+  }
+  else
+   write("BasicDiagTester: Unexpected negative response received.");
+}
+

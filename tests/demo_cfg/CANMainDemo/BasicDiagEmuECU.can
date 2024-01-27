@@ -1,0 +1,97 @@
+variables
+{
+}
+
+on message can1.0x701
+{
+    //Simple simulation to show symbolic interpretation of diagnostic responses
+    //as specified in the Basic Diagnostics Editor
+    //
+    //This node answers single frame diagnostic requests on CAN ID 0x701 with single frame responses
+    //on CAN ID 0x601 (these TP settings are used for the "BasicDiagECU" in the Diagnostic Configuration 
+    //dialog 
+    // - Requests in the switch/case block below are answered with a constant response
+    //   defined there, too.
+    //-  Other requests for which responses are not defined in the switch/case block 
+    //   are answered with a "Service not supported" negative response.
+    
+
+    message can1.0x601 emulResp;
+    int errFlag=0;
+
+    emulResp.DLC=8;
+    //initialize reponse
+    emulResp.byte(0)=0x0;emulResp.byte(1)=0x0;emulResp.byte(2)=0x0;emulResp.byte(3)=0x0;
+    emulResp.byte(4)=0x0;emulResp.byte(5)=0x0;emulResp.byte(6)=0x0;emulResp.byte(7)=0x0;
+    
+    switch (this.byte(1))
+    {
+        case 0x10://start session
+            switch(this.byte(2))
+            {
+                case 0x01://default session --> send pos. response
+                    emulResp.byte(0)=0x02;emulResp.byte(1)=0x50;emulResp.byte(2)=0x01;
+                    break;
+                case 0x02://programming session --> send neg. response "General reject"
+                    emulResp.byte(0)=0x03;emulResp.byte(1)=0x7F;emulResp.byte(2)=0x10;
+                    emulResp.byte(3)=0x33;
+                    break;
+                case 0x03://extended session --> send pos. response
+                    emulResp.byte(0)=0x02;emulResp.byte(1)=0x50;emulResp.byte(2)=0x03;
+                    break;
+                default:
+                    errFlag=1;
+                    break;
+            }
+            break;
+        case 0x22:
+            switch(this.byte(3))
+            {
+                case 0x92://serial number read --> send pos. response
+                    emulResp.byte(0)=0x07;emulResp.byte(1)=0x62;emulResp.byte(2)=0x00;emulResp.byte(3)=0x92;
+                    emulResp.byte(4)=0x00;emulResp.byte(5)=0x02;emulResp.byte(6)=0x9B;emulResp.byte(7)=0x45;
+                    break;
+                case 0x40://A/D values read --> send pos. response
+                    emulResp.byte(0)=0x07;emulResp.byte(1)=0x62;emulResp.byte(2)=0x00;emulResp.byte(3)=0x40;
+                    emulResp.byte(4)=0x7A;emulResp.byte(5)=0x06;emulResp.byte(6)=0x00;emulResp.byte(7)=0x02;
+                    break;
+                case 0x41://window lifter speed read --> send pos. response with sine wave output value
+                    emulResp.byte(0)=0x05;emulResp.byte(1)=0x62;emulResp.byte(2)=0x00;emulResp.byte(3)=0x41;
+                    emulResp.byte(4)=0x00;emulResp.byte(5)=abs(255*sin(2*PI*1/5000000*timenow()));
+                    break;
+                case 0x80://door status read --> send neg. response "Security access denied"
+                    emulResp.byte(0)=0x03;emulResp.byte(1)=0x7F;emulResp.byte(2)=0x22;emulResp.byte(3)=0x33;
+                    break;
+                default:
+                    errFlag=1;
+                    break;
+            }
+
+            break;
+        case 0x3E: //tester present
+            emulResp.byte(0)=0x02;emulResp.byte(1)=0x7E;emulResp.byte(2)=0x00;
+            break;
+        default:
+            errFlag=1;
+            break;
+    }
+    if (errFlag)
+    {
+        //respond to anything not defined above as "Service not supported"
+        errFlag=0;
+        emulResp.byte(0)=0x03;emulResp.byte(1)=0x7F;emulResp.byte(2)=this.byte(1);emulResp.byte(3)=0x11;        
+        write("BasicDiagEmu: Request unknown in simulation / sending generic negative response");
+    }
+    output(emulResp);
+}
+
+on message *
+{
+  if(this.CAN == 1)
+  {
+    //output all messages untouched except for the 
+    //0x701 request message for the basic diagnostic ECU
+    output(this);
+  }
+}
+

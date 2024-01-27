@@ -1,0 +1,57 @@
+variables
+{
+  message can1.EngSpeedContr gMsgEngSpeed = {Dir = TX};
+}
+
+on *
+{
+     output(this);
+}
+
+on message can1.EngineData
+{
+   int OldValue;
+
+    if (this.EngSpeed > 55000)
+    {
+      writeToLog ("*******************************");
+      writeToLog ("===>> Engine Speed critical");
+      writeToLog ("*******************************");
+      gMsgEngSpeed.Test = 1;
+    }
+
+    if (this.EngSpeed < 55000)
+    { 
+      writeToLog ("*******************************");
+      writeToLog ("===>> Engine Speed not critical");
+      writeToLog ("*******************************");
+      gMsgEngSpeed.Test = 0;
+    }
+
+    if (OldValue != gMsgEngSpeed.Test)
+    {
+      output (gMsgEngSpeed); // Only send after change !!
+      OldValue = gMsgEngSpeed.Test;
+    }
+    output (this);
+}
+
+on diagResponse BasicDiagECU.SerialNumber_Read
+{
+  char serNo[30];
+  long ret;
+  
+  ret=diagGetParameter(this, "SerialNumber", serNo, elcount(serNo));
+
+  if (ret>0) {
+      writeToLog ("*******************************");
+      writeToLog ("Serial Number of BasicDiagECU: %s", serNo);
+      writeToLog ("*******************************");
+  }
+}
+
+on start
+{
+  output (gMsgEngSpeed);
+}
+

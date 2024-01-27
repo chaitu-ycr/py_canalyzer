@@ -1,3 +1,3 @@
 # reference
 
-## ::: src.my_module
+## ::: src.py_canalyzer

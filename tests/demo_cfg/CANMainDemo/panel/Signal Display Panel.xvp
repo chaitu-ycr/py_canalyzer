@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="Panel1" Children="Controls" ControlName="Signal Display Panel">
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl13" Children="Controls" ControlName="Static Text 13">
+      <Property Name="Name">StaticTextControl13</Property>
+      <Property Name="Size">69, 13</Property>
+      <Property Name="Location">428, 9</Property>
+      <Property Name="Text">WheelSpeed</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl1" Children="Controls" ControlName="Input/Output Box 1">
+      <Property Name="Name">TextBoxControl1</Property>
+      <Property Name="Size">86, 37</Property>
+      <Property Name="Location">377, 68</Property>
+      <Property Name="AlarmUpperTextColor">Black</Property>
+      <Property Name="ValueDecimalPlaces">3</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Double</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">Black</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Top</Property>
+      <Property Name="DescriptionText">Rear Right:</Property>
+      <Property Name="DescriptionSize">86, 17</Property>
+      <Property Name="SymbolConfiguration">2;2;motbus;;WheelInfo;WheelSpeedRR;0</Property>
+      <Property Name="TabIndex">35</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl2" Children="Controls" ControlName="Input/Output Box 2">
+      <Property Name="Name">TextBoxControl2</Property>
+      <Property Name="Size">86, 37</Property>
+      <Property Name="Location">377, 25</Property>
+      <Property Name="AlarmUpperTextColor">Black</Property>
+      <Property Name="ValueDecimalPlaces">3</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Double</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">Black</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Top</Property>
+      <Property Name="DescriptionText">Front Left:</Property>
+      <Property Name="DescriptionSize">86, 17</Property>
+      <Property Name="SymbolConfiguration">2;2;motbus;;WheelInfo;WheelSpeedFL;0</Property>
+      <Property Name="TabIndex">34</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl3" Children="Controls" ControlName="Input/Output Box 3">
+      <Property Name="Name">TextBoxControl3</Property>
+      <Property Name="Size">86, 37</Property>
+      <Property Name="Location">474, 68</Property>
+      <Property Name="AlarmUpperTextColor">Black</Property>
+      <Property Name="ValueDecimalPlaces">3</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Double</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">Black</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Top</Property>
+      <Property Name="DescriptionText">Rear Left:</Property>
+      <Property Name="DescriptionSize">86, 17</Property>
+      <Property Name="SymbolConfiguration">2;2;motbus;;WheelInfo;WheelSpeedRL;0</Property>
+      <Property Name="TabIndex">37</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl4" Children="Controls" ControlName="Input/Output Box 4">
+      <Property Name="Name">TextBoxControl4</Property>
+      <Property Name="Size">86, 37</Property>
+      <Property Name="Location">474, 25</Property>
+      <Property Name="AlarmUpperTextColor">Black</Property>
+      <Property Name="ValueDecimalPlaces">3</Property>
+      <Property Name="AlarmLowerBkgColor">Salmon</Property>
+      <Property Name="ValueDisplay">Double</Property>
+      <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+      <Property Name="AlarmLowerTextColor">Black</Property>
+      <Property Name="AlarmGeneralSettings">1;0;0;100</Property>
+      <Property Name="DisplayLabel">Top</Property>
+      <Property Name="DescriptionText">Front Right:</Property>
+      <Property Name="DescriptionSize">86, 17</Property>
+      <Property Name="SymbolConfiguration">2;2;motbus;;WheelInfo;WheelSpeedFR;0</Property>
+      <Property Name="TabIndex">36</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ComboBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="ComboBoxControl2" Children="Controls" ControlName="Combo Box 2">
+      <Property Name="Name">ComboBoxControl2</Property>
+      <Property Name="Size">101, 38</Property>
+      <Property Name="Location">253, 67</Property>
+      <Property Name="DropDownWidth">101</Property>
+      <Property Name="BackColor">Window</Property>
+      <Property Name="ForeColor">Black</Property>
+      <Property Name="DisplayLabel">Top</Property>
+      <Property Name="DescriptionText">GearBoxInfo:</Property>
+      <Property Name="DescriptionSize">101, 17</Property>
+      <Property Name="SymbolConfiguration">2;2;motbus;;GearBoxInfo;Gear;0</Property>
+      <Property Name="TabIndex">4</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ComboBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="ComboBoxControl1" Children="Controls" ControlName="Combo Box 1">
+      <Property Name="Name">ComboBoxControl1</Property>
+      <Property Name="Size">101, 38</Property>
+      <Property Name="Location">254, 7</Property>
+      <Property Name="DropDownWidth">101</Property>
+      <Property Name="BackColor">Window</Property>
+      <Property Name="ForeColor">Black</Property>
+      <Property Name="DisplayLabel">Top</Property>
+      <Property Name="DescriptionText">EngineData:</Property>
+      <Property Name="DescriptionSize">101, 17</Property>
+      <Property Name="SymbolConfiguration">2;2;motbus;;EngineData;IdleRunning;0</Property>
+      <Property Name="TabIndex">1</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl10" Children="Controls" ControlName="Static Text 11">
+      <Property Name="Name">StaticTextControl10</Property>
+      <Property Name="Size">23, 16</Property>
+      <Property Name="Location">2, 109</Property>
+      <Property Name="Text">-50</Property>
+      <Property Name="ForeColor">120, 120, 120</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl8" Children="Controls" ControlName="Static Text 9">
+      <Property Name="Name">StaticTextControl8</Property>
+      <Property Name="Size">27, 15</Property>
+      <Property Name="Location">137, 109</Property>
+      <Property Name="Text">150</Property>
+      <Property Name="ForeColor">120, 120, 120</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ProgressBarControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="ProgressBarControl1" Children="Controls" ControlName="Progress Bar 2">
+      <Property Name="Name">ProgressBarControl1</Property>
+      <Property Name="Size">189, 23</Property>
+      <Property Name="Location">7, 82</Property>
+      <Property Name="OriginValue">-50</Property>
+      <Property Name="Maximum">300</Property>
+      <Property Name="Minimum">-50</Property>
+      <Property Name="ValuePos">Right</Property>
+      <Property Name="UseWindowsStyle">False</Property>
+      <Property Name="BarBackColor">231, 231, 231</Property>
+      <Property Name="BarForeColor">6, 176, 37</Property>
+      <Property Name="ValueSize">49, 23</Property>
+      <Property Name="WithFrame">False</Property>
+      <Property Name="SymbolConfiguration">2;2;motbus;;EngineData;EngTemp;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl6" Children="Controls" ControlName="Static Text 7">
+      <Property Name="Name">StaticTextControl6</Property>
+      <Property Name="Size">10, 20</Property>
+      <Property Name="Location">145, 97</Property>
+      <Property Name="Text">| </Property>
+      <Property Name="ForeColor">120, 120, 120</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl7" Children="Controls" ControlName="Static Text 8">
+      <Property Name="Name">StaticTextControl7</Property>
+      <Property Name="Size">10, 16</Property>
+      <Property Name="Location">4, 97</Property>
+      <Property Name="Text">| </Property>
+      <Property Name="ForeColor">120, 120, 120</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl9" Children="Controls" ControlName="Static Text 10">
+      <Property Name="Name">StaticTextControl9</Property>
+      <Property Name="Size">56, 13</Property>
+      <Property Name="Location">7, 66</Property>
+      <Property Name="Text">EngTemp:</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl12" Children="Controls" ControlName="Static Text 12">
+      <Property Name="Name">StaticTextControl12</Property>
+      <Property Name="Size">32, 13</Property>
+      <Property Name="Location">202, 87</Property>
+      <Property Name="Text">degC</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ProgressBarControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="ProgressBarControl2" Children="Controls" ControlName="Progress Bar 1">
+      <Property Name="Name">ProgressBarControl2</Property>
+      <Property Name="Size">189, 23</Property>
+      <Property Name="Location">7, 21</Property>
+      <Property Name="OriginValue">0</Property>
+      <Property Name="Maximum">300</Property>
+      <Property Name="ValuePos">Right</Property>
+      <Property Name="UseWindowsStyle">False</Property>
+      <Property Name="BarBackColor">231, 231, 231</Property>
+      <Property Name="BarForeColor">6, 176, 37</Property>
+      <Property Name="ValueSize">45, 23</Property>
+      <Property Name="WithFrame">False</Property>
+      <Property Name="SymbolConfiguration">2;2;motbus;;ABSdata;CarSpeed;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl1" Children="Controls" ControlName="Static Text 1">
+      <Property Name="Name">StaticTextControl1</Property>
+      <Property Name="Size">10, 13</Property>
+      <Property Name="Location">4, 36</Property>
+      <Property Name="Text">| </Property>
+      <Property Name="ForeColor">120, 120, 120</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl2" Children="Controls" ControlName="Static Text 2">
+      <Property Name="Name">StaticTextControl2</Property>
+      <Property Name="Size">32, 13</Property>
+      <Property Name="Location">202, 26</Property>
+      <Property Name="Text">km/h</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl3" Children="Controls" ControlName="Static Text 3">
+      <Property Name="Name">StaticTextControl3</Property>
+      <Property Name="Size">57, 13</Property>
+      <Property Name="Location">7, 5</Property>
+      <Property Name="Text">CarSpeed:</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl4" Children="Controls" ControlName="Static Text 4">
+      <Property Name="Name">StaticTextControl4</Property>
+      <Property Name="Size">27, 13</Property>
+      <Property Name="Location">137, 47</Property>
+      <Property Name="Text">300</Property>
+      <Property Name="ForeColor">120, 120, 120</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl5" Children="Controls" ControlName="Static Text 5">
+      <Property Name="Name">StaticTextControl5</Property>
+      <Property Name="Size">14, 13</Property>
+      <Property Name="Location">2, 48</Property>
+      <Property Name="Text">0</Property>
+      <Property Name="ForeColor">120, 120, 120</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl11" Children="Controls" ControlName="Static Text 6">
+      <Property Name="Name">StaticTextControl11</Property>
+      <Property Name="Size">10, 13</Property>
+      <Property Name="Location">145, 36</Property>
+      <Property Name="Text">| </Property>
+      <Property Name="ForeColor">120, 120, 120</Property>
+    </Object>
+    <Property Name="Name">Panel1</Property>
+    <Property Name="Size">569, 132</Property>
+    <Property Name="BackColor">White</Property>
+  </Object>
+</Panel>

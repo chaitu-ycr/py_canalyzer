@@ -1,0 +1,241 @@
+/*@!Encoding:1252*/
+variables
+{
+  msTimer tEngSpeedTimer;
+  msTimer tEngTempTimer;
+  msTimer tEngMsgTimer;
+  msTimer tABSMsgTimer;
+  msTimer tWheelInfoTimer;
+  msTimer tWheelInfoTimerIEEE;
+
+  message can1.EngineData    gMsgEngMsg;
+  message can1.ABSdata       gMsgAbsMsg;
+  message can1.WheelInfo     gMsgWheelInfoMsg;
+  message can1.WheelInfoIEEE gMsgWheelInfoMsgIEEE;
+  message can1.GearBoxInfo mMsg;
+
+  int gGear = 1;
+  const long kRandomMax = 40;
+}
+/* Description of example:
+
+     Language features used:
+       - access of attribute values from CANdb
+         (in: on timer tABSMsgTimer 
+              on timer tEngMsgTimer )
+       - use of symbolic table values from
+         CANdb (in on timer tEngSpeedTimer)
+*/
+
+on sysvar_update sysvar::ChangeGear::ChangeGearPosition
+{
+ if (@sysvar::ChangeGear::IgnoreGearFromIG == 1)
+ {
+    mMsg.Gear = @sysvar::ChangeGear::ChangeGearPosition;
+    output(mMsg);
+ }
+}
+
+on sysvar_update sysvar::ChangeGear::IgnoreGearFromIG
+{
+  if (@sysvar::ChangeGear::IgnoreGearFromIG == 0)
+  {
+    enableControl("ChangeGear", "SwitchGear", 0);
+  }
+  else
+  {
+    enableControl("ChangeGear", "SwitchGear", 1);  
+  }
+}
+
+on key 'e'
+{
+  output(errorFrame);
+}
+
+on timer tABSMsgTimer
+{
+  setTimer(tABSMsgTimer, ABSdata.CycleTime);
+  output(gMsgAbsMsg);
+}
+
+on timer tEngMsgTimer
+{
+  setTimer(tEngMsgTimer, EngineData.CycleTime);
+  output(gMsgEngMsg);
+}
+
+on start
+{
+  gMsgEngMsg.EngTemp.phys = -6;
+
+  gMsgEngMsg.PetrolLevel.phys = 45;
+
+  setTimer(tEngSpeedTimer, 30);
+  setTimer(tEngTempTimer, 370);
+  setTimer(tEngMsgTimer, 0);
+  setTimer(tABSMsgTimer, 15);
+  setTimer(tWheelInfoTimer, WheelInfo.CycleTime );
+  setTimer(tWheelInfoTimerIEEE, WheelInfoIEEE.CycleTime );
+
+  // This function will show the help text in the Write-Window
+  InfoText();
+  enableControl("ChangeGear", "SwitchGear", 0);
+}
+
+on timer tEngSpeedTimer
+{
+  double inc     = 77.0; 
+  int    del     = 10;
+  int    timeInc = 1;
+  int    signalIncreased;
+  double engineSpeed;
+  double wheelSpeed;
+
+  setTimer(tEngSpeedTimer, del);
+  del += timeInc;
+
+  ////////////////////////////////////////////////////////////
+  /////// set signal EngineSpeed /////////////////////////////
+  if(engineSpeed > 6000.)
+  {
+    signalIncreased = 0;
+    del = 10;
+    timeInc = 1;
+    gMsgEngMsg.IdleRunning = EngineData.IdleRunning::Idle;
+  }
+  if(gMsgEngMsg.EngSpeed.phys < 600.)
+  {
+    engineSpeed = 600.;
+    signalIncreased = 1;
+    del = 10;
+    timeInc = 1;
+    gMsgEngMsg.IdleRunning = EngineData.IdleRunning::Running;
+  }
+
+  if(signalIncreased == 1)
+  {
+    engineSpeed += inc;
+    if(engineSpeed > 4000)
+      timeInc = 3;
+    if(engineSpeed > 5000)
+      timeInc = 5;
+  }
+  else //signalIncreased == 0
+  {
+    engineSpeed -= inc;
+    if(engineSpeed < 2500)
+      timeInc = 3;
+    if(engineSpeed < 1500)
+      timeInc = 5;
+  }
+
+  gMsgEngMsg.EngSpeed.phys = engineSpeed;
+
+  ////////////////////////////////////////////////////////////
+  /////// set signal CarSpeed ////////////////////////////////
+  wheelSpeed = engineSpeed / (6 - gGear) / 30;
+  gMsgAbsMsg.CarSpeed.Phys = wheelSpeed;
+
+  ////////////////////////////////////////////////////////////
+  /////// set signals in wheel info messages /////////////////
+  SetWheelInfoMessages(wheelSpeed);
+}
+
+on timer tEngTempTimer
+{
+  int del = 300;
+  if (gMsgEngMsg.EngTemp.phys < 125.)
+  {
+    setTimer(tEngTempTimer, del);
+    del += 25;
+    gMsgEngMsg.EngTemp.phys += 2;
+  }
+}
+
+void SetWheelInfoMessages(double wheelSpeed)
+{
+  double jitterValue;
+
+  jitterValue = AddJitter(wheelSpeed);
+  if(jitterValue > 0)
+     gMsgWheelInfoMsg.WheelSpeedFL.Phys = jitterValue;
+
+  jitterValue = AddJitter(wheelSpeed);
+  if(jitterValue > 0)
+     gMsgWheelInfoMsg.WheelSpeedFR.Phys = jitterValue;
+
+  jitterValue = AddJitter(wheelSpeed);
+  if(jitterValue > 0)
+     gMsgWheelInfoMsg.WheelSpeedRL.Phys = jitterValue;
+
+  jitterValue = AddJitter(wheelSpeed);
+  if(jitterValue > 0)
+   gMsgWheelInfoMsg.WheelSpeedRR.Phys = jitterValue;
+
+  jitterValue = AddJitter(wheelSpeed);
+  if(jitterValue > 0)
+     gMsgWheelInfoMsgIEEE.WheelSpeedFL = jitterValue;
+
+  jitterValue = AddJitter(wheelSpeed);
+  if(jitterValue > 0)
+     gMsgWheelInfoMsgIEEE.WheelSpeedFR = jitterValue;   
+}
+
+on timer tWheelInfoTimer
+{
+  setTimer(tWheelInfoTimer, WheelInfo.CycleTime);
+  output(gMsgWheelInfoMsg);
+}
+
+on timer tWheelInfoTimerIEEE
+{
+  setTimer(tWheelInfoTimerIEEE, WheelInfoIEEE.CycleTime);
+  output(gMsgWheelInfoMsgIEEE);
+}
+
+double AddJitter ( long inValue )
+{
+  long randomJitter;
+  double value;
+  randomJitter = random(kRandomMax);
+  value = inValue - (kRandomMax / 2) + randomJitter;                         
+
+  // add extra jitter after decimal point
+  randomJitter = random(kRandomMax * 10);
+  if (randomJitter > ((kRandomMax * 10) / 2))
+  {
+    value = value + (randomJitter / 1000.0);
+  }
+  else 
+  {                         
+    value = value - (randomJitter / 1000.0);                         
+  }
+  return value;
+}
+
+on message can1.GearBoxInfo
+{
+  if(0 == @sysvar::ChangeGear::IgnoreGearFromIG)
+  {
+    output(this);
+    gGear = this.Gear;
+  }
+}
+
+InfoText ()
+{
+  Write("----------------------------------------");
+  Write("<e>:     sends an error frame");
+  Write("----------------------------------------");
+}
+
+on message can1.*
+{
+  if(this.CAN == 1)
+  {
+    //default: forward all incoming CAN messages unchanged
+    output(this);
+  }
+}
+

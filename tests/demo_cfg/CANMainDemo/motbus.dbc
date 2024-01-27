@@ -1,0 +1,81 @@
+VERSION "DNPBNNNYNNNNNNNNNNNNNNNNNNYYYNYNNNNNNNNNNN/4/%%%/4/'%**4NNN///"
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: GearBox EngineTest EngineControl DashBoard ABS
+
+
+BO_ 199 WheelInfoIEEE: 8 ABS
+ SG_ WheelSpeedFR : 32|32@1- (1,0) [0|1300] "1/min"  GearBox,EngineControl
+ SG_ WheelSpeedFL : 0|32@1- (1,0) [0|1300] "1/min"  GearBox,EngineControl
+
+BO_ 200 WheelInfo: 8 ABS
+ SG_ WheelSpeedRR : 48|16@1+ (0.02,0) [0|1300] "1/min"  GearBox
+ SG_ WheelSpeedRL : 32|16@1+ (0.02,0) [0|1300] "1/min"  GearBox
+ SG_ WheelSpeedFR : 16|16@1+ (0.02,0) [0|1300] "1/min"  GearBox
+ SG_ WheelSpeedFL : 0|16@1+ (0.02,0) [0|1300] "1/min"  GearBox
+
+BO_ 1020 GearBoxInfo: 1 GearBox
+ SG_ EcoMode : 6|2@1+ (1,0) [0|1] ""  DashBoard,EngineControl
+ SG_ ShiftRequest : 3|1@1+ (1,0) [0|0] ""  EngineControl
+ SG_ Gear : 0|3@1+ (1,0) [1|5] ""  ABS,DashBoard,EngineControl
+
+BO_ 300 EngSpeedContr: 1 EngineTest
+ SG_ Test : 0|1@1+ (1,0) [0|0] ""  EngineControl
+
+BO_ 100 EngineData: 4 EngineControl
+ SG_ PetrolLevel : 24|8@1- (1,0) [0|45] "l" Vector__XXX
+ SG_ IdleRunning : 23|1@1+ (1,0) [0|0] ""  GearBox
+ SG_ EngTemp : 16|7@1+ (2,-50) [-50|150] "degC"  DashBoard,GearBox
+ SG_ EngSpeed : 0|16@1+ (0.1,0) [0|6500] "rpm"  DashBoard,GearBox
+
+BO_ 201 ABSdata: 3 ABS
+ SG_ Diagnostics : 16|8@1+ (1,0) [0|0] ""  EngineControl
+ SG_ GearLock : 15|1@1+ (1,0) [0|0] ""  GearBox
+ SG_ CarSpeed : 0|10@1+ (0.5,0) [0|300] "km/h"  GearBox,DashBoard
+
+
+
+BA_DEF_ BO_  "CycleTime" INT 5 1000;
+BA_DEF_DEF_  "CycleTime" 100;
+BA_ "CycleTime" BO_ 100 100;
+BA_ "CycleTime" BO_ 201 50;
+VAL_ 1020 ShiftRequest 1 "Shift_Request_On" 0 "Shift_Request_Off" ;
+VAL_ 1020 Gear 0 "Idle" 1 "Gear_1" 2 "Gear_2" 3 "Gear_3" 4 "Gear_4" 5 "Gear_5" ;
+VAL_ 300 Test 1 "Critical" 0 "Not_Critical" ;
+VAL_ 100 IdleRunning 0 "Running" 1 "Idle" ;
+VAL_ 201 GearLock 1 "Gear_Lock_On" 0 "Gear_Lock_Off" ;
+SIG_VALTYPE_ 199 WheelSpeedFR : 1;
+SIG_VALTYPE_ 199 WheelSpeedFL : 1;
+

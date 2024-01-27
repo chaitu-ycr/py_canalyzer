@@ -1,27 +1,30 @@
-site_name: py_proj_template
-site_url: https://chaitu-ycr.github.io/py_proj_template/
-site_description: Enter project description here
+site_name: py_canalyzer
+site_url: https://chaitu-ycr.github.io/py_canalyzer/
+site_description: Python Package for controlling Vector CANAlyzer tool
 site_author: chaitu-ycr
 
-repo_name: chaitu-ycr/py_proj_template
-repo_url: https://github.com/chaitu-ycr/py_proj_template.git
+repo_name: chaitu-ycr/py_canalyzer
+repo_url: https://github.com/chaitu-ycr/py_canalyzer
 edit_uri: blob/main/docs/
 
 nav:
   - about: index.md
+  - prerequisites: 002_prerequisites.md
+  - setup: 003_environment_setup.md
+  - usage: 004_usage.md
   - reference: 999_reference.md
 
 theme:
-  name: material
-  logo: images/package_logo.png
+  name: readthedocs
   features:
     - toc.integrate
 
 plugins:
-  - mkdocstrings
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: false
+            merge_init_into_class: true
   - search
-
-markdown_extensions:
-  - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true

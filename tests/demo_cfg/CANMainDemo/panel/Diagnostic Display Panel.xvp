@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="Diagnostics Display Panel">
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl1" Children="Controls" ControlName="Static Text">
+      <Property Name="Name">StaticTextControl1</Property>
+      <Property Name="Size">323, 139</Property>
+      <Property Name="Location">13, 10</Property>
+      <Property Name="Text">Note:
+This panel shows the processing of diagnostics requests 
+and responses in CAPL. 
+Once a button is pressed here, the respective 
+CAPL handlers are executed in the node "BasicDiagTester" 
+and the diagnostics requests are sent. Once a response 
+has been received, the response parameters are mapped 
+in CAPL to system variables and displayed here.
+</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl3" Children="Controls" ControlName="Group Box">
+      <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl2" Children="Controls" ControlName="Static Text">
+        <Property Name="Name">StaticTextControl2</Property>
+        <Property Name="Size">267, 15</Property>
+        <Property Name="Location">6, 19</Property>
+        <Property Name="Text">Press "Read" repeatedly to see values changing
+</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl4" Children="Controls" ControlName="Input/Output Box">
+        <Property Name="Name">TextBoxControl4</Property>
+        <Property Name="Size">222, 26</Property>
+        <Property Name="Location">92, 46</Property>
+        <Property Name="AlarmUpperTextColor">Black</Property>
+        <Property Name="ValueDecimalPlaces">0</Property>
+        <Property Name="AlarmLowerBkgColor">Salmon</Property>
+        <Property Name="ValueDisplay">Decimal</Property>
+        <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+        <Property Name="AlarmLowerTextColor">Black</Property>
+        <Property Name="AlarmGeneralSettings">1;0;0;0</Property>
+        <Property Name="DisplayLabel">Left</Property>
+        <Property Name="DescriptionText">WindowLifterSpeed:</Property>
+        <Property Name="BoxBorderStyle">FixedSingle</Property>
+        <Property Name="DescriptionSize">108, 17</Property>
+        <Property Name="SymbolConfiguration">4;16;BasicDiagnosticsPanel;;;WindowLifterSpeed;1;;;-1</Property>
+        <Property Name="TabIndex">35</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl5" Children="Controls" ControlName="Button">
+        <Property Name="Name">ButtonControl5</Property>
+        <Property Name="Size">80, 23</Property>
+        <Property Name="Location">6, 46</Property>
+        <Property Name="Text">Read</Property>
+        <Property Name="SymbolConfiguration">4;16;BasicDiagnosticsPanel;;;Send_WindowLifterSpeedRead;1;;;-1</Property>
+        <Property Name="TabIndex">5</Property>
+      </Object>
+      <Property Name="Name">GroupBoxControl3</Property>
+      <Property Name="Size">323, 83</Property>
+      <Property Name="Location">13, 329</Property>
+      <Property Name="Text">WindowLifterSpeed</Property>
+      <Property Name="TabIndex">34</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl2" Children="Controls" ControlName="Group Box">
+      <Object Type="Vector.CANalyzer.Panels.Design.TextBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null" Name="TextBoxControl3" Children="Controls" ControlName="Input/Output Box">
+        <Property Name="Name">TextBoxControl3</Property>
+        <Property Name="Size">193, 26</Property>
+        <Property Name="Location">121, 28</Property>
+        <Property Name="AlarmUpperTextColor">Black</Property>
+        <Property Name="ValueDecimalPlaces">0</Property>
+        <Property Name="AlarmLowerBkgColor">Salmon</Property>
+        <Property Name="ValueDisplay">Decimal</Property>
+        <Property Name="AlarmUpperBkgColor">IndianRed</Property>
+        <Property Name="AlarmLowerTextColor">Black</Property>
+        <Property Name="AlarmGeneralSettings">1;0;0;0</Property>
+        <Property Name="DisplayLabel">Left</Property>
+        <Property Name="DescriptionText">SerialNumber:</Property>
+        <Property Name="BoxBorderStyle">FixedSingle</Property>
+        <Property Name="DescriptionSize">80, 17</Property>
+        <Property Name="SymbolConfiguration">4;16;BasicDiagnosticsPanel;;;SerialNumber;1;;;-1</Property>
+        <Property Name="TabIndex">34</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl4" Children="Controls" ControlName="Button">
+        <Property Name="Name">ButtonControl4</Property>
+        <Property Name="Size">80, 23</Property>
+        <Property Name="Location">6, 28</Property>
+        <Property Name="Text">Read</Property>
+        <Property Name="SymbolConfiguration">4;16;BasicDiagnosticsPanel;;;Send_SerialNumberRead;1;;;-1</Property>
+        <Property Name="TabIndex">5</Property>
+      </Object>
+      <Property Name="Name">GroupBoxControl2</Property>
+      <Property Name="Size">323, 59</Property>
+      <Property Name="Location">13, 254</Property>
+      <Property Name="Text">SerialNumber</Property>
+      <Property Name="TabIndex">33</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl1" Children="Controls" ControlName="Group Box">
+      <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl1" Children="Controls" ControlName="Button">
+        <Property Name="Name">ButtonControl1</Property>
+        <Property Name="Size">80, 58</Property>
+        <Property Name="Location">6, 23</Property>
+        <Property Name="Text">Start Default Session</Property>
+        <Property Name="SymbolConfiguration">4;16;BasicDiagnosticsPanel;;;Send_StartSession;1;;;-1</Property>
+        <Property Name="TabIndex">5</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.96.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControlBSI28" ControlName="Session">
+        <Property Name="Name">SwitchControlBSI28</Property>
+        <Property Name="Size">32, 32</Property>
+        <Property Name="Location">121, 37</Property>
+        <Property Name="StateCnt">3</Property>
+        <Property Name="SwitchValues">1;3;0;1;2</Property>
+        <Property Name="ImageFile">bmp\Diag.bmp</Property>
+        <Property Name="SymbolConfiguration">4;16;BasicDiagnosticsPanel;;;SessionStarted;1;;;-1</Property>
+        <Property Name="TabIndex">29</Property>
+        <Property Name="ReadOnlyControl">True</Property>
+      </Object>
+      <Property Name="Name">GroupBoxControl1</Property>
+      <Property Name="Size">199, 88</Property>
+      <Property Name="Location">13, 152</Property>
+      <Property Name="Text">SessionHandling</Property>
+      <Property Name="TabIndex">32</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">349, 426</Property>
+    <Property Name="BackColor">White</Property>
+  </Object>
+</Panel>

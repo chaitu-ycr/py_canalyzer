@@ -1,0 +1,61 @@
+/*@@var:*/
+variables {
+
+}
+/*@@end*/
+
+/*@@key:'t':*/
+on key 't'
+{
+  write("Logging triggered.");
+  trigger();
+}
+/*@@end*/
+
+/*@@msg:*:*/
+on message *
+{
+  output(this);
+}
+/*@@end*/
+
+/*@@key:'f':*/
+on key 'f'
+{
+  int toggle;
+
+  write("Log file name will be changed with the next");
+  write("trigger event/measurement start.");
+
+  trigger();
+
+  toggle = !toggle;
+  if (toggle)
+  {
+    setLogFileName("File1");
+  }
+  else
+  {
+    setLogFileName("File2");
+  }
+}
+/*@@end*/
+
+/*@@key:'s':*/
+on key 's'
+{
+  write("Logging stopped.");
+  stopLogging();
+}
+/*@@end*/
+
+/*@@startStart:Start:*/
+on start
+{
+  Write("----------------------------------------");
+  Write("<t>,<s>: triggers/stops the logging");
+  Write("<f>:     change log file name");
+  Write("----------------------------------------");
+}
+/*@@end*/
+

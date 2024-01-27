@@ -1,6 +1,6 @@
 @echo off
 
-title "running pytest"
+title "uploading package to pypi"
 
 set origin_dir=%CD%
 set file_dir=%~dp0
@@ -16,8 +16,9 @@ cd %root_folder%
 call %cmd_venv_activate%
 if %ERRORLEVEL% NEQ 0 (GOTO ERROR)
 
-:START_PYTESTS
-pytest
+:PUBLISH_PACKAGE
+poetry publish --build
+
 if %ERRORLEVEL% NEQ 0 (GOTO ERROR)
 
 :END

@@ -1,6 +1,6 @@
 @echo off
 
-title "poetry build python wheel"
+title "running pytest-html"
 
 set origin_dir=%CD%
 set file_dir=%~dp0
@@ -16,8 +16,8 @@ cd %root_folder%
 call %cmd_venv_activate%
 if %ERRORLEVEL% NEQ 0 (GOTO ERROR)
 
-:BUILD_PACKAGE
-poetry build
+:START_PYTESTS
+pytest tests/ --html=tests/report/full_test_report.html --self-contained-html
 if %ERRORLEVEL% NEQ 0 (GOTO ERROR)
 
 :END

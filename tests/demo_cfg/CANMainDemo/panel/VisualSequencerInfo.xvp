@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="Panel1" Children="Controls" ControlName="Visual Sequencer Info">
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl1" Children="Controls" ControlName="GroupBoxControl1">
+      <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl1" Children="Controls" ControlName="StaticTextControl1">
+        <Property Name="Name">StaticTextControl1</Property>
+        <Property Name="Size">457, 94</Property>
+        <Property Name="Location">6, 17</Property>
+        <Property Name="BackColor">Window</Property>
+        <Property Name="Text">A Visual Sequence is a command sequence for automated network stimulation.
+
+The 'Gear Box Sequence' of this configuration sends the message 'GearBoxInfo' cyclically. The 
+signal 'Gear' assigned to this message is changed every four seconds.
+
+To avoid conficts please stop cyclic sending of message 'GearBoxInfo' in the Interactive 
+Generator CAN (CAN IG) before starting the sequence.</Property>
+      </Object>
+      <Property Name="Name">GroupBoxControl1</Property>
+      <Property Name="Size">468, 118</Property>
+      <Property Name="Location">7, 9</Property>
+      <Property Name="BackColor">Window</Property>
+      <Property Name="Text">Visual Sequencer</Property>
+      <Property Name="TabIndex">0</Property>
+    </Object>
+    <Property Name="Name">Panel1</Property>
+    <Property Name="Size">483, 138</Property>
+    <Property Name="BackColor">Window</Property>
+  </Object>
+</Panel>

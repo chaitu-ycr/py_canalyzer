@@ -1,3 +1,3 @@
-# [my_package](https://github.com/chaitu-ycr/py_proj_template.git)
+# [my_package](https://github.com/chaitu-ycr/py_canalyzer.git)
 
-Python Package Template repository
+Python package for controlling Vector CANalyzer tool

@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="ChangeGear">
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl1" Children="Controls" ControlName="Group Box">
+      <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl2" Children="Controls" ControlName="Static Text 1">
+        <Property Name="Name">StaticTextControl2</Property>
+        <Property Name="Size">72, 13</Property>
+        <Property Name="Location">27, 126</Property>
+        <Property Name="Text">Gear position:</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl1" Children="Controls" ControlName="Static Text">
+        <Property Name="Name">StaticTextControl1</Property>
+        <Property Name="Size">165, 26</Property>
+        <Property Name="Location">4, 90</Property>
+        <Property Name="TextAlign">TopCenter</Property>
+        <Property Name="Text">If the Gear setting is ignored, you 
+can switch the Gear manually.</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.RadioButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="RadioButtonControl1" Children="Controls" ControlName="Radio Button">
+        <Property Name="Name">RadioButtonControl1</Property>
+        <Property Name="Size">153, 17</Property>
+        <Property Name="Location">6, 23</Property>
+        <Property Name="Text">Apply Gear setting from IG</Property>
+        <Property Name="SwitchValue">0</Property>
+        <Property Name="SymbolConfiguration">4;16;ChangeGear;;;IgnoreGearFromIG;1;;;-1</Property>
+        <Property Name="TabIndex">5</Property>
+        <Property Name="SwitchValueVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;</Property>
+        <Property Name="SwitchValueVT">1;Lower;0</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl1" ControlName="SwitchGearImage">
+        <Property Name="Name">SwitchControl1</Property>
+        <Property Name="Size">114, 88</Property>
+        <Property Name="Location">27, 149</Property>
+        <Property Name="StateCnt">7</Property>
+        <Property Name="SwitchValues">1;7;0;1;2;3;4;5;6</Property>
+        <Property Name="TransparentColor">Window</Property>
+        <Property Name="ImageFile">bmp\ControlGear.png</Property>
+        <Property Name="SymbolConfiguration">4;2;motbus;GearBox;GearBoxInfo;Gear;1;CAN1;;-1</Property>
+        <Property Name="TabIndex">3</Property>
+        <Property Name="SwitchValuesRx">1;7;0;1;2;3;4;5;6</Property>
+        <Property Name="SwitchValuesVT">1;7;0/Lower/0;1/Lower/1;2/Lower/2;3/Lower/3;4/Lower/4;5/Lower/5;6/Lower/6</Property>
+        <Property Name="SwitchValuesVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;Count&gt;7&lt;/Count&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;0&lt;/TxValue&gt;&lt;RxValue&gt;1&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;1&lt;/TxValue&gt;&lt;RxValue&gt;2&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;2&lt;/TxValue&gt;&lt;RxValue&gt;3&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;3&lt;/TxValue&gt;&lt;RxValue&gt;4&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;4&lt;/TxValue&gt;&lt;RxValue&gt;5&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;5&lt;/TxValue&gt;&lt;RxValue&gt;6&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;6&lt;/TxValue&gt;</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.NumericUpDownControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="NumericUpDownControl1" Children="Controls" ControlName="SwitchGear">
+        <Property Name="Name">NumericUpDownControl1</Property>
+        <Property Name="Size">38, 20</Property>
+        <Property Name="Location">103, 124</Property>
+        <Property Name="Maximum">5</Property>
+        <Property Name="SymbolConfiguration">4;16;ChangeGear;;;ChangeGearPosition;1;;;-1</Property>
+        <Property Name="TabIndex">4</Property>
+      </Object>
+      <Object Type="Vector.CANalyzer.Panels.Design.RadioButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=10.0.127.0, Culture=neutral, PublicKeyToken=null" Name="RadioButtonControl2" Children="Controls" ControlName="Radio Button">
+        <Property Name="Name">RadioButtonControl2</Property>
+        <Property Name="Size">153, 17</Property>
+        <Property Name="Location">6, 46</Property>
+        <Property Name="BackColor">Window</Property>
+        <Property Name="Text">Ignore Gear setting from IG</Property>
+        <Property Name="SymbolConfiguration">4;16;ChangeGear;;;IgnoreGearFromIG;1;;;-1</Property>
+        <Property Name="TabIndex">6</Property>
+      </Object>
+      <Property Name="Name">GroupBoxControl1</Property>
+      <Property Name="Size">172, 251</Property>
+      <Property Name="Location">10, 5</Property>
+      <Property Name="Text">Change Gear</Property>
+      <Property Name="TabIndex">7</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">193, 265</Property>
+    <Property Name="BackColor">White</Property>
+  </Object>
+</Panel>
