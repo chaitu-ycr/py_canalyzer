@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="chaitu-ycr" /><link rel="canonical" href="https://chaitu-ycr.github.io/py_canalyzer/999_reference/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>reference - py_canalyzer</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "reference";
+        var mkdocs_page_input_path = "999_reference.md";
+        var mkdocs_page_url = "/py_canalyzer/999_reference/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> py_canalyzer
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">about</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../002_prerequisites.md">prerequisites</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../003_environment_setup.md">setup</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../004_usage.md">usage</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">reference</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#src.py_canalyzer">py_canalyzer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#src.py_canalyzer.CANalyzer">CANalyzer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.open">open</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">py_canalyzer</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">reference</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/chaitu-ycr/py_canalyzer/blob/main/docs/999_reference.md">Edit on chaitu-ycr/py_canalyzer</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="reference">reference</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="src.py_canalyzer"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Python package for controlling Vector CANalyzer tool</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.py_canalyzer.CANalyzer" class="doc doc-heading">
+            <code class="highlight language-python">CANalyzer(py_log_dir='')</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>The CANalyzer class represents the CANalyzer application.
+The CANalyzer class is the foundation for the object hierarchy.
+You can reach all other methods from the CANalyzer class instance.</p>
+
+
+
+<p><strong>Examples:</strong></p>
+    <pre class="highlight"><code class="language-pycon">&gt;&gt;&gt; # Example to open CANalyzer configuration, start measurement, stop measurement and close configuration.
+&gt;&gt;&gt; canalyzer_inst = CANalyzer(py_canalyzer_log_dir=r'D:\.py_canalyzer')
+&gt;&gt;&gt; canalyzer_inst.open(r'D:\py_canalyzer\demo_cfg\demo.cfg')
+&gt;&gt;&gt; canalyzer_inst.start_measurement()
+&gt;&gt;&gt; wait(10)
+&gt;&gt;&gt; canalyzer_inst.stop_measurement()
+&gt;&gt;&gt; canalyzer_inst.quit()</code></pre>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.open" class="doc doc-heading">
+          <code class="highlight language-python">open(canalyzer_cfg, visible=True, auto_save=False, prompt_user=False)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Loads CANalyzer configuration.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>canalyzer_cfg</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The complete path for the CANalyzer configuration.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>visible</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>True if you want to see CANalyzer UI. Defaults to True.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>auto_save</code></b>
+                  (<code>bool</code>, default:
+                      <code>False</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>A boolean value that indicates whether the active configuration should be saved if it has been changed. Defaults to False.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>prompt_user</code></b>
+                  (<code>bool</code>, default:
+                      <code>False</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>A boolean value that indicates whether the user should intervene in error situations. Defaults to False.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="about"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
