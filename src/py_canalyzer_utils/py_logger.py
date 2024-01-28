@@ -7,7 +7,7 @@ from logging import handlers
 
 class PyLogger:
     def __init__(self, py_log_dir='') -> None:
-        self.log = logging.getLogger('CANalyzer_LOG')
+        self.log = logging.getLogger('CANALYZER_LOG')
         self.log.handlers.clear()
         self.log.propagate = False
         self.__py_log_initialization(py_log_dir)
