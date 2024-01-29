@@ -1,19 +1,28 @@
 import win32com.client
 
 # import application utils here
-from .app_utils.version import Version
+from .app_utils.bus import Bus
+from .app_utils.capl import Capl
+from .app_utils.configuration import Configuration
+from .app_utils.measurement import Measurement
+from .app_utils.networks import Networks
+from .app_utils.performance import Performance
+from .app_utils.system import System
 from .app_utils.ui import Ui
+from .app_utils.version import Version
+
 
 class Application:
-    def __init__(self) -> None:
+    def __init__(self, user_capl_function_names: tuple):
+        self.user_capl_function_names = user_capl_function_names
         self.com_obj = win32com.client.Dispatch('CANalyzer.Application')
 
     def bus(self, type="CAN"):
-        return self.com_obj.Bus(type)
+        return Bus(self.com_obj, type)
 
     @property
     def capl(self):
-        return self.com_obj.CAPL
+        return Capl(self.com_obj)
 
     @property
     def channel_mapping_name(self):
@@ -25,7 +34,7 @@ class Application:
 
     @property
     def configuration(self):
-        return self.com_obj.Configuration
+        return Configuration(self.com_obj)
 
     @property
     def full_name(self):
@@ -33,7 +42,7 @@ class Application:
 
     @property
     def measurement(self):
-        return self.com_obj.Measurement
+        return Measurement(self.com_obj, self.user_capl_function_names)
 
     @property
     def name(self):
@@ -41,15 +50,19 @@ class Application:
 
     @property
     def networks(self):
-        return self.com_obj.Networks()
+        return Networks(self.com_obj)
 
     @property
     def path(self):
         return self.com_obj.Path
 
     @property
+    def performance(self):
+        return Performance(self.com_obj)
+
+    @property
     def system(self):
-        return self.com_obj.System
+        return System(self.com_obj)
 
     @property
     def ui(self):

@@ -183,9 +183,10 @@ poetry.toml
 # user defined
 .py_canoe_log
 poetry.lock
-tests/demo_cfg/Logs/
-tests/demo_cfg/demo_v10.cfg
 *.vtestreport
 *.settings
 *.ini
 tests/report/
+tests/demo_cfg/CANMainDemo/Logs/
+tests/demo_cfg/CANMainDemo/demo_v16*
+tests/demo_cfg/CANMainDemo/CANMainDemo.xp*
