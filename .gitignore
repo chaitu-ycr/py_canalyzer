@@ -175,13 +175,13 @@ poetry.toml
 # pycharm and vscode
 .idea/
 .vscode/
-# CANoe Files
+# canalyzer Files
 *.cbf
 *.stcfg
 .vs/
 
 # user defined
-.py_canoe_log
+.py_canalyzer_log
 poetry.lock
 *.vtestreport
 *.settings

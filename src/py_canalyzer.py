@@ -48,7 +48,7 @@ class CANalyzer:
         pythoncom.CoInitialize()
         self.application = Application(self.user_capl_function_names)
         if not auto_save:
-            self.application.configuration.Modified = False
+            self.application.com_obj.Configuration.Modified = False
             self.log.info(f'CANalyzer cfg "Modified" parameter set to False to avoid error.')
         if os.path.isfile(canalyzer_cfg):
             self.log.info(f'CANalyzer cfg "{canalyzer_cfg}" found.')
@@ -68,6 +68,7 @@ class CANalyzer:
             prompt_user (bool, optional): A boolean value that indicates whether the user should intervene in error situations. Defaults to False.
         """
         self.application.new(auto_save, prompt_user)
+        self.log.info('created a new configuration...')
 
     def quit(self):
         """Quits the application.
@@ -305,25 +306,6 @@ class CANalyzer:
         self.log.info(''.center(100, '='))
         return version_info
 
-    def get_bus_databases_info(self, bus: str) -> dict:
-        """returns bus database info(path, channel, full_name).
-
-        Args:
-            bus (str): bus (str): The Bus(CAN, LIN, FlexRay, MOST, AFDX, Ethernet) on which the signal is sent.
-
-        Returns:
-            bus database info {'path': 'value', 'channel': 'value', 'full_name': 'value'}
-        """
-        dbcs_info = dict()
-        bus_obj = self.application.bus
-        if bus_obj.bus_type != bus:
-            bus_obj.reinit_bus(bus_type=bus)
-        db_objects = bus_obj.database_objects()
-        for db_object in db_objects.values():
-            dbcs_info[db_object.Name] = {'path': db_object.Path, 'channel': db_object.Channel, 'full_name': db_object.FullName}
-        self.log.info(f'{bus} bus databases info -> {dbcs_info}.')
-        return dbcs_info
-
     def get_signal_value(self, bus: str, channel: int, message: str, signal: str, raw_value=False) -> Union[float, int]:
         r"""get_signal_value Returns a Signal value.
 
@@ -344,27 +326,6 @@ class CANalyzer:
         signal_value = bus_obj.signal_get_raw_value(sig_obj) if raw_value else bus_obj.signal_get_value(sig_obj)
         self.log.info(f'value of signal({bus}{channel}.{message}.{signal})={signal_value}.')
         return signal_value
-
-    def set_signal_value(self, bus: str, channel: int, message: str, signal: str, value: int, raw_value=False) -> None:
-        r"""set_signal_value sets a value to Signal. Works only when messages are sent using CANalyzer IL.
-
-        Args:
-            bus (str): The Bus(CAN, LIN, FlexRay, MOST, AFDX, Ethernet) on which the signal is sent.
-            channel (int): The channel on which the signal is sent.
-            message (str): The name of the message to which the signal belongs.
-            signal (str): The name of the signal.
-            value (Union[float, int]): signal value.
-            raw_value (bool): return raw value of the signal if true. Default(False) is physical value.
-        """
-        bus_obj = self.application.bus
-        if bus_obj.bus_type != bus:
-            bus_obj.reinit_bus(bus_type=bus)
-        sig_obj = bus_obj.get_signal(channel, message, signal)
-        if raw_value:
-            bus_obj.signal_set_raw_value(sig_obj, value)
-        else:
-            bus_obj.signal_set_value(sig_obj, value)
-        self.log.info(f'signal({bus}{channel}.{message}.{signal}) value set to {value}.')
 
     def get_signal_full_name(self, bus: str, channel: int, message: str, signal: str) -> str:
         """Determines the fully qualified name of a signal.
@@ -452,33 +413,6 @@ class CANalyzer:
         signal_value = bus_obj.signal_get_raw_value(sig_obj) if raw_value else bus_obj.signal_get_value(sig_obj)
         self.log.info(f'value of signal({bus}{channel}.{message}.{signal})={signal_value}.')
         return signal_value
-
-    def set_j1939_signal_value(self, bus: str, channel: int, message: str, signal: str, source_addr: int, dest_addr: int, value: Union[float, int], raw_value=False) -> None:
-        r"""get_j1939_signal Returns a Signal object.
-
-        Args:
-            bus (str): The Bus(CAN, LIN, FlexRay, MOST, AFDX, Ethernet) on which the signal is sent.
-            channel (int): The channel on which the signal is sent.
-            message (str): The name of the message to which the signal belongs.
-            signal (str): The name of the signal.
-            source_addr (int): The source address of the ECU that sends the message.
-            dest_addr (int): The destination address of the ECU that receives the message.
-            value (Union[float, int]): signal value.
-            raw_value (bool): return raw value of the signal if true. Default(False) is physical value.
-
-        Returns:
-            signal value.
-        """
-        bus_obj = self.application.bus
-        if bus_obj.bus_type != bus:
-            bus_obj.reinit_bus(bus_type=bus)
-        sig_obj = bus_obj.get_j1939_signal(channel, message, signal, source_addr, dest_addr)
-        if raw_value:
-            bus_obj.signal_set_raw_value(sig_obj, value)
-        else:
-            bus_obj.signal_set_value(sig_obj, value)
-        self.log.info(f'signal value set to {value}.')
-        self.log.info(f'signal({bus}{channel}.{message}.{signal}) value set to {value}.')
 
     def get_j1939_signal_full_name(self, bus: str, channel: int, message: str, signal: str, source_addr: int, dest_addr: int) -> str:
         """Determines the fully qualified name of a signal.
@@ -587,6 +521,9 @@ class CANalyzer:
             output_file (str): The complete path of the output file.
             tab_index (int, optional): The index of the page, for which logging of the output is to be activated. Defaults to None.
         """
+        file_path = os.path.dirname(output_file)
+        if not os.path.exists(file_path):
+            os.makedirs(file_path)
         self.application.ui.write.enable_output_file(output_file, tab_index)
 
     def disable_write_window_output_file(self, tab_index=None) -> None:
@@ -658,6 +595,7 @@ class CANalyzer:
                 variable_com_object.Value = float(value)
             else:
                 variable_com_object.Value = value
+            wait(0.2)
             self.log.info(f'system variable({sys_var_name}) value set to -> {value}.')
         except Exception as e:
             self.log.info(f'failed to set system variable({sys_var_name}) value. {e}')
@@ -683,7 +621,7 @@ class CANalyzer:
                 else:
                     final_value[index: index + len(value)] = value
                 variable_com_object.Value = tuple(final_value)
-                wait(0.1)
+                wait(0.2)
                 self.log.info(f'system variable({sys_var_name}) value set to -> {variable_com_object.Value}.')
             else:
                 self.log.info(

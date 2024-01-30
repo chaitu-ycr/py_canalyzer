@@ -76,14 +76,14 @@ class Capl:
             bool: CAPL function execution status. True-success, False-failed.
         """
         return_value = False
-        if len(arguments) == self.parameter_count(capl_function_obj):
+        try:
             if len(arguments) > 0:
                 capl_function_obj.Call(*arguments)
             else:
                 capl_function_obj.Call()
             return_value = True
-        else:
-            print(fr'function arguments not matching with CAPL user function args.')
+        except Exception as e:
+            self.__log.info(f"failed to call capl function. error {e}")
         return return_value
 
     def compile_result(self) -> dict:

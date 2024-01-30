@@ -13,78 +13,113 @@ from .app_utils.version import Version
 
 
 class Application:
+    """The Application object represents the CANalyzer application.
+    """
     def __init__(self, user_capl_function_names: tuple):
         self.user_capl_function_names = user_capl_function_names
         self.com_obj = win32com.client.Dispatch('CANalyzer.Application')
-
-    def bus(self, type="CAN"):
-        return Bus(self.com_obj, type)
+        self.bus = Bus
+        self.capl = Capl
+        self.configuration = Configuration
+        self.measurement = Measurement
+        self.networks = Networks
+        self.performance = Performance
+        self.system = System
+        self.ui = Ui
+        self.version = Version
 
     @property
-    def capl(self):
-        return Capl(self.com_obj)
+    def channel_mapping_name(self) -> str:
+        """get the application name which is used to map application channels to real existing Vector hardware interface channels.
 
-    @property
-    def channel_mapping_name(self):
+        Returns:
+            str: The application name
+        """
         return self.com_obj.ChannelMappingName
 
     @channel_mapping_name.setter
     def channel_mapping_name(self, name: str):
+        """set the application name which is used to map application channels to real existing Vector hardware interface channels.
+
+        Args:
+            name (str): The application name used to map the channels.
+        """
         self.com_obj.ChannelMappingName = name
 
     @property
-    def configuration(self):
-        return Configuration(self.com_obj)
+    def full_name(self) -> str:
+        """determines the complete path of the CANalyzer application.
 
-    @property
-    def full_name(self):
+        Returns:
+            str: location where CANalyzer is installed.
+        """
         return self.com_obj.FullName
 
     @property
-    def measurement(self):
-        return Measurement(self.com_obj, self.user_capl_function_names)
+    def name(self) -> str:
+        """Returns the name of the CANalyzer application.
 
-    @property
-    def name(self):
+        Returns:
+            str: name of the CANalyzer application.
+        """
         return self.com_obj.Name
 
     @property
-    def networks(self):
-        return Networks(self.com_obj)
+    def path(self) -> str:
+        """Returns the Path of the CANalyzer application.
 
-    @property
-    def path(self):
+        Returns:
+            str: Path of the CANalyzer application.
+        """
         return self.com_obj.Path
 
     @property
-    def performance(self):
-        return Performance(self.com_obj)
+    def visible(self) -> bool:
+        """Returns whether the CANalyzer main window is visible or is only displayed by a tray icon.
 
-    @property
-    def system(self):
-        return System(self.com_obj)
-
-    @property
-    def ui(self):
-        return Ui(self.com_obj)
-
-    @property
-    def version(self):
-        return Version(self.com_obj)
-
-    @property
-    def visible(self):
+        Returns:
+            bool: A boolean value indicating whether the CANalyzer main window is visible..
+        """
         return self.com_obj.Visible
 
     @visible.setter
-    def visible(self, value=True):
-        self.com_obj.Visible = value
+    def visible(self, visible: bool):
+        """Defines whether the CANalyzer main window is visible or is only displayed by a tray icon.
 
-    def new(self, autosave=True, prompt_user=False):
-        self.com_obj.New(autosave, prompt_user)
+        Args:
+            visible (bool): A boolean value indicating whether the CANalyzer main window is to be visible.
+        """
+        self.com_obj.Visible = visible
 
-    def open(self, path: str, autosave=True, prompt_user=False):
-        self.com_obj.Open(path, autosave, prompt_user)
+    def new(self, auto_save=False, prompt_user=False) -> None:
+        """Creates a new configuration.
+
+        Args:
+            auto_save (bool, optional): A boolean value that indicates whether the active configuration should be saved if it has been changed. Defaults to False.
+            prompt_user (bool, optional): A boolean value that indicates whether the user should intervene in error situations. Defaults to False.
+        """
+        self.com_obj.New(auto_save, prompt_user)
+
+    def open(self, path: str, auto_save=False, prompt_user=False) -> None:
+        """Loads a configuration.
+
+        Args:
+            path (str): The complete path for the configuration.
+            auto_save (bool, optional): A boolean value that indicates whether the active configuration should be saved if it has been changed. Defaults to False.
+            prompt_user (bool, optional): A boolean value that indicates whether the user should intervene in error situations. Defaults to False.
+        """
+        self.com_obj.Open(path, auto_save, prompt_user)
+        self.bus = Bus(self.com_obj)
+        self.capl = Capl(self.com_obj)
+        self.configuration = Configuration(self.com_obj)
+        self.networks = Networks(self.com_obj)
+        self.performance = Performance(self.com_obj)
+        self.system = System(self.com_obj)
+        self.ui = Ui(self.com_obj)
+        self.version = Version(self.com_obj)
+        self.measurement = Measurement(self.com_obj, self.user_capl_function_names)
 
     def quit(self):
+        """Quits the application.
+        """
         self.com_obj.Quit()

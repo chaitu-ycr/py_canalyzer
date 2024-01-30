@@ -17,7 +17,7 @@ call %cmd_venv_activate%
 if %ERRORLEVEL% NEQ 0 (GOTO ERROR)
 
 :START_PYTESTS
-pytest tests/ --html=tests/report/full_test_report.html --self-contained-html
+pytest tests/ --html=tests/report/full_test_report.html --self-contained-html -rA --verbose
 if %ERRORLEVEL% NEQ 0 (GOTO ERROR)
 
 :END

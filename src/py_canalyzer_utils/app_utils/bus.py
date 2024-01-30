@@ -143,11 +143,3 @@ class Bus:
         """
         signal_object.Value = value
 
-    # Databases
-    def database_objects(self):
-        db_objects = dict()
-        databases = self.com_obj.Databases
-        for index in range(1, databases.Count + 1):
-            database = databases.Item(index)
-            db_objects[database.Name] = database
-        return db_objects
