@@ -1,12 +1,8 @@
 # About [py_canalyzer](https://github.com/chaitu-ycr/py_canalyzer)
 
-Python 🐍 Package for controlling Vector CANalyzer 🛶 Tool
+Python 🐍 Package for controlling Vector CANalyzer Tool
 
 fork [this repo](https://github.com/chaitu-ycr/py_canalyzer/fork) and create pull request to contribute back to this project.
-
-for ideas/discussions please create new discussion [here](https://github.com/chaitu-ycr/py_canalyzer/discussions)
-
-create issue or request feature [here](https://github.com/chaitu-ycr/py_canalyzer/issues/new/choose)
 
 ## GitHub Releases 👉 [link](https://github.com/chaitu-ycr/py_canalyzer/releases)
 
@@ -38,7 +34,7 @@ from py_canalyzer import CANalyzer
 canalyzer_inst = CANalyzer()
 
 # open CANalyzer configuration. Replace CANalyzer_cfg with yours.
-canalyzer_inst.open(canalyzer_cfg=r'tests\demo_cfg\demo.cfg')
+canalyzer_inst.open(canalyzer_cfg=r'tests\demo_cfg\CANMainDemo\CANMainDemo.cfg')
 
 # print installed CANalyzer application version
 canalyzer_inst.get_canalyzer_version_info()
@@ -47,7 +43,7 @@ canalyzer_inst.get_canalyzer_version_info()
 canalyzer_inst.start_measurement()
 
 # get signal value. Replace arguments with your message and signal data.
-sig_val = canalyzer_inst.get_signal_value('CAN', 1, 'LightState', 'FlashLight')
+sig_val = canalyzer_inst.get_signal_value('CAN', 1, 'EngineData', 'EngSpeed')
 print(sig_val)
 
 # Stop CANalyzer Measurement
