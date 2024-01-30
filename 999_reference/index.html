@@ -45,15 +45,15 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="" href="../002_prerequisites.md">prerequisites</a>
+                <li class="toctree-l1"><a class="reference internal" href="../002_prerequisites/">prerequisites</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="" href="../003_environment_setup.md">setup</a>
+                <li class="toctree-l1"><a class="reference internal" href="../003_environment_setup/">setup</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="" href="../004_usage.md">usage</a>
+                <li class="toctree-l1"><a class="reference internal" href="../004_usage/">usage</a>
                 </li>
               </ul>
               <ul class="current">
@@ -63,7 +63,89 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#src.py_canalyzer.CANalyzer">CANalyzer</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.add_offline_source_log_file">add_offline_source_log_file</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.break_measurement_in_offline_mode">break_measurement_in_offline_mode</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.call_capl_function">call_capl_function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.check_j1939_signal_online">check_j1939_signal_online</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.check_j1939_signal_state">check_j1939_signal_state</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.check_signal_online">check_signal_online</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.check_signal_state">check_signal_state</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.clear_write_window_content">clear_write_window_content</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.compile_all_capl_nodes">compile_all_capl_nodes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.copy_write_window_content">copy_write_window_content</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.define_system_variable">define_system_variable</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.disable_write_window_output_file">disable_write_window_output_file</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.enable_write_window_output_file">enable_write_window_output_file</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.get_application_info">get_application_info</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.get_can_bus_statistics">get_can_bus_statistics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.get_canalyzer_version_info">get_canalyzer_version_info</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.get_j1939_signal_full_name">get_j1939_signal_full_name</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.get_j1939_signal_value">get_j1939_signal_value</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.get_measurement_index">get_measurement_index</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.get_measurement_running_status">get_measurement_running_status</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.get_signal_full_name">get_signal_full_name</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.get_signal_value">get_signal_value</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.get_system_variable_value">get_system_variable_value</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.new">new</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.open">open</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.quit">quit</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.read_text_from_write_window">read_text_from_write_window</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.reset_measurement">reset_measurement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.reset_measurement_in_offline_mode">reset_measurement_in_offline_mode</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.save_configuration">save_configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.save_configuration_as">save_configuration_as</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.set_measurement_index">set_measurement_index</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.set_system_variable_array_values">set_system_variable_array_values</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.set_system_variable_value">set_system_variable_value</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.start_measurement">start_measurement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.start_measurement_in_animation_mode">start_measurement_in_animation_mode</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.step_measurement_event_in_single_step">step_measurement_event_in_single_step</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.stop_ex_measurement">stop_ex_measurement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.stop_measurement">stop_measurement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.ui_activate_desktop">ui_activate_desktop</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.ui_open_baudrate_dialog">ui_open_baudrate_dialog</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#src.py_canalyzer.CANalyzer.write_text_in_write_window">write_text_in_write_window</a>
     </li>
         </ul>
     </li>
@@ -122,7 +204,7 @@
 
 
 <h2 id="src.py_canalyzer.CANalyzer" class="doc doc-heading">
-            <code class="highlight language-python">CANalyzer(py_log_dir='')</code>
+            <code class="highlight language-python">CANalyzer(py_log_dir='', user_capl_functions=tuple())</code>
 
 </h2>
 
@@ -133,17 +215,6 @@
       <p>The CANalyzer class represents the CANalyzer application.
 The CANalyzer class is the foundation for the object hierarchy.
 You can reach all other methods from the CANalyzer class instance.</p>
-
-
-
-<p><strong>Examples:</strong></p>
-    <pre class="highlight"><code class="language-pycon">&gt;&gt;&gt; # Example to open CANalyzer configuration, start measurement, stop measurement and close configuration.
-&gt;&gt;&gt; canalyzer_inst = CANalyzer(py_canalyzer_log_dir=r'D:\.py_canalyzer')
-&gt;&gt;&gt; canalyzer_inst.open(r'D:\py_canalyzer\demo_cfg\demo.cfg')
-&gt;&gt;&gt; canalyzer_inst.start_measurement()
-&gt;&gt;&gt; wait(10)
-&gt;&gt;&gt; canalyzer_inst.stop_measurement()
-&gt;&gt;&gt; canalyzer_inst.quit()</code></pre>
 
 
   
@@ -157,6 +228,1545 @@ You can reach all other methods from the CANalyzer class instance.</p>
 
 
 
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.add_offline_source_log_file" class="doc doc-heading">
+          <code class="highlight language-python">add_offline_source_log_file(absolute_log_file_path)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>this method adds offline source log file.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>absolute_log_file_path</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>absolute path of offline source log file.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+<b><code>bool</code></b>(                <code>bool</code>
+)            –
+            <div class="doc-md-description">
+              <p>returns True if log file added or already available. False if log file not available.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.break_measurement_in_offline_mode" class="doc doc-heading">
+          <code class="highlight language-python">break_measurement_in_offline_mode()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Interrupts the playback in Offline mode.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.call_capl_function" class="doc doc-heading">
+          <code class="highlight language-python">call_capl_function(name, *arguments)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Calls a CAPL function.
+Please note that the number of parameters must agree with that of the CAPL function.
+not possible to read return value of CAPL function at the moment. only execution status is returned.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>name</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the CAPL function. Please make sure this name is already passed as argument during CANalyzer instance creation. see example for more info.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>arguments</code></b>
+                  (<code>tuple</code>, default:
+                      <code>()</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Function parameters p1…p10 (optional).</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+<b><code>bool</code></b>(                <code>bool</code>
+)            –
+            <div class="doc-md-description">
+              <p>CAPL function execution status. True-success, False-failed.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.check_j1939_signal_online" class="doc doc-heading">
+          <code class="highlight language-python">check_j1939_signal_online(bus, channel, message, signal, source_addr, dest_addr)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Checks whether the measurement is running and the signal has been received.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>bus</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The Bus(CAN, LIN, FlexRay, MOST, AFDX, Ethernet) on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>channel</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The channel on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>message</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the message to which the signal belongs.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>signal</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the signal.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>source_addr</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The source address of the ECU that sends the message.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>dest_addr</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The destination address of the ECU that receives the message.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+<b><code>bool</code></b>(                <code>bool</code>
+)            –
+            <div class="doc-md-description">
+              <p>TRUE: if the measurement is running and the signal has been received. FALSE: if not.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.check_j1939_signal_state" class="doc doc-heading">
+          <code class="highlight language-python">check_j1939_signal_state(bus, channel, message, signal, source_addr, dest_addr)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns the state of the signal.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+<b><code>int</code></b>(                <code>int</code>
+)            –
+            <div class="doc-md-description">
+              <p>State of the signal.
+possible values are:
+    0: The default value of the signal is returned.
+    1: The measurement is not running; the value set by the application is returned.
+    3: The signal has been received in the current measurement; the current value is returned.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.check_signal_online" class="doc doc-heading">
+          <code class="highlight language-python">check_signal_online(bus, channel, message, signal)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Checks whether the measurement is running and the signal has been received.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>bus</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The Bus(CAN, LIN, FlexRay, MOST, AFDX, Ethernet) on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>channel</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The channel on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>message</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the message to which the signal belongs.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>signal</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the signal.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>bool</code>
+            –
+            <div class="doc-md-description">
+              <p>TRUE if the measurement is running and the signal has been received. FALSE if not.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.check_signal_state" class="doc doc-heading">
+          <code class="highlight language-python">check_signal_state(bus, channel, message, signal)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Checks whether the measurement is running and the signal has been received.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>bus</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The Bus(CAN, LIN, FlexRay, MOST, AFDX, Ethernet) on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>channel</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The channel on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>message</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the message to which the signal belongs.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>signal</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the signal.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>int</code>
+            –
+            <div class="doc-md-description">
+              <p>State of the signal.
+0- The default value of the signal is returned.
+1- The measurement is not running; the value set by the application is returned.
+2- The measurement is not running; the value of the last measurement is returned.
+3- The signal has been received in the current measurement; the current value is returned.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.clear_write_window_content" class="doc doc-heading">
+          <code class="highlight language-python">clear_write_window_content()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Clears the contents of the Write Window.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.compile_all_capl_nodes" class="doc doc-heading">
+          <code class="highlight language-python">compile_all_capl_nodes()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>compiles all CAPL, XML and .NET nodes.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.copy_write_window_content" class="doc doc-heading">
+          <code class="highlight language-python">copy_write_window_content()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Copies the contents of the Write Window to the clipboard.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.define_system_variable" class="doc doc-heading">
+          <code class="highlight language-python">define_system_variable(sys_var_name, value)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>define_system_variable Create a system variable with an initial value
+Args:
+    sys_var_name (str): The name of the system variable. Ex- "sys_var_demo::speed"
+    value (Union[int, float, str]): variable value. Default value 0.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+<b><code>object</code></b>(                <code>object</code>
+)            –
+            <div class="doc-md-description">
+              <p>The new Variable object.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.disable_write_window_output_file" class="doc doc-heading">
+          <code class="highlight language-python">disable_write_window_output_file(tab_index=None)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Disables logging of all outputs of the Write Window.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>tab_index</code></b>
+                  (<code>int</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>The index of the page, for which logging of the output is to be activated. Defaults to None.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.enable_write_window_output_file" class="doc doc-heading">
+          <code class="highlight language-python">enable_write_window_output_file(output_file, tab_index=None)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Enables logging of all outputs of the Write Window in the output file.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>output_file</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The complete path of the output file.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>tab_index</code></b>
+                  (<code>int</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>The index of the page, for which logging of the output is to be activated. Defaults to None.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.get_application_info" class="doc doc-heading">
+          <code class="highlight language-python">get_application_info()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Vector CANalyzer Application Version.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+<b><code>str</code></b>(                <code>str</code>
+)            –
+            <div class="doc-md-description">
+              <p>return Vector CANalyzer Application Version. "major.minor.build" -&gt; "12.01.04"</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.get_can_bus_statistics" class="doc doc-heading">
+          <code class="highlight language-python">get_can_bus_statistics(channel)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns CAN Bus Statistics.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>channel</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The channel of the statistic that is to be returned.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>dict</code>
+            –
+            <div class="doc-md-description">
+              <p>CAN bus statistics.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.get_canalyzer_version_info" class="doc doc-heading">
+          <code class="highlight language-python">get_canalyzer_version_info()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>The Version class represents the version of the CANalyzer application.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>dict</code>
+            –
+            <div class="doc-md-description">
+              <p>"full_name" - The complete CANalyzer version.</p>
+            </div>
+          </li>
+          <li>
+                <code>dict</code>
+            –
+            <div class="doc-md-description">
+              <p>"name" - The CANalyzer version.</p>
+            </div>
+          </li>
+          <li>
+                <code>dict</code>
+            –
+            <div class="doc-md-description">
+              <p>"build" - The build number of the CANalyzer application.</p>
+            </div>
+          </li>
+          <li>
+                <code>dict</code>
+            –
+            <div class="doc-md-description">
+              <p>"major" - The major version number of the CANalyzer application.</p>
+            </div>
+          </li>
+          <li>
+                <code>dict</code>
+            –
+            <div class="doc-md-description">
+              <p>"minor" - The minor version number of the CANalyzer application.</p>
+            </div>
+          </li>
+          <li>
+                <code>dict</code>
+            –
+            <div class="doc-md-description">
+              <p>"patch" - The patch number of the CANalyzer application.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.get_j1939_signal_full_name" class="doc doc-heading">
+          <code class="highlight language-python">get_j1939_signal_full_name(bus, channel, message, signal, source_addr, dest_addr)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Determines the fully qualified name of a signal.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>bus</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The Bus(CAN, LIN, FlexRay, MOST, AFDX, Ethernet) on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>channel</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The channel on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>message</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the message to which the signal belongs.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>signal</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the signal.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>source_addr</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The source address of the ECU that sends the message.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>dest_addr</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The destination address of the ECU that receives the message.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+<b><code>str</code></b>(                <code>str</code>
+)            –
+            <div class="doc-md-description">
+              <p>The fully qualified name of a signal. The following format will be used for signals: <DatabaseName>::<MessageName>::<SignalName></p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.get_j1939_signal_value" class="doc doc-heading">
+          <code class="highlight language-python">get_j1939_signal_value(bus, channel, message, signal, source_addr, dest_addr, raw_value=False)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>get_j1939_signal Returns a Signal object.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>bus</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The Bus(CAN, LIN, FlexRay, MOST, AFDX, Ethernet) on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>channel</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The channel on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>message</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the message to which the signal belongs.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>signal</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the signal.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>source_addr</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The source address of the ECU that sends the message.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>dest_addr</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The destination address of the ECU that receives the message.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>raw_value</code></b>
+                  (<code>bool</code>, default:
+                      <code>False</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>return raw value of the signal if true. Default(False) is physical value.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><span title="typing.Union">Union</span>[float, int]</code>
+            –
+            <div class="doc-md-description">
+              <p>signal value.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.get_measurement_index" class="doc doc-heading">
+          <code class="highlight language-python">get_measurement_index()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>gets the measurement index for the next measurement.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>int</code>
+            –
+            <div class="doc-md-description">
+              <p>Measurement Index.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.get_measurement_running_status" class="doc doc-heading">
+          <code class="highlight language-python">get_measurement_running_status()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns the running state of the measurement.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>bool</code>
+            –
+            <div class="doc-md-description">
+              <p>True if The measurement is running.</p>
+            </div>
+          </li>
+          <li>
+                <code>bool</code>
+            –
+            <div class="doc-md-description">
+              <p>False if The measurement is not running.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.get_signal_full_name" class="doc doc-heading">
+          <code class="highlight language-python">get_signal_full_name(bus, channel, message, signal)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Determines the fully qualified name of a signal.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>bus</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The Bus(CAN, LIN, FlexRay, MOST, AFDX, Ethernet) on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>channel</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The channel on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>message</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the message to which the signal belongs.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>signal</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the signal.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+<b><code>str</code></b>(                <code>str</code>
+)            –
+            <div class="doc-md-description">
+              <p>The fully qualified name of a signal. The following format will be used for signals: <DatabaseName>::<MessageName>::<SignalName></p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.get_signal_value" class="doc doc-heading">
+          <code class="highlight language-python">get_signal_value(bus, channel, message, signal, raw_value=False)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>get_signal_value Returns a Signal value.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>bus</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The Bus(CAN, LIN, FlexRay, MOST, AFDX, Ethernet) on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>channel</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The channel on which the signal is sent.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>message</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the message to which the signal belongs.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>signal</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the signal.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>raw_value</code></b>
+                  (<code>bool</code>, default:
+                      <code>False</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>return raw value of the signal if true. Default(False) is physical value.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><span title="typing.Union">Union</span>[float, int]</code>
+            –
+            <div class="doc-md-description">
+              <p>signal value.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.get_system_variable_value" class="doc doc-heading">
+          <code class="highlight language-python">get_system_variable_value(sys_var_name)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>get_system_variable_value Returns a system variable value.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>sys_var_name</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the system variable. Ex- "sys_var_demo::speed"</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code><span title="typing.Union">Union</span>[int, float, str, tuple, None]</code>
+            –
+            <div class="doc-md-description">
+              <p>System Variable value.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.new" class="doc doc-heading">
+          <code class="highlight language-python">new(auto_save=False, prompt_user=False)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Creates a new configuration.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>auto_save</code></b>
+                  (<code>bool</code>, default:
+                      <code>False</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>A boolean value that indicates whether the active configuration should be saved if it has been changed. Defaults to False.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>prompt_user</code></b>
+                  (<code>bool</code>, default:
+                      <code>False</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>A boolean value that indicates whether the user should intervene in error situations. Defaults to False.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
 
 
 <div class="doc doc-object doc-function">
@@ -228,6 +1838,832 @@ You can reach all other methods from the CANalyzer class instance.</p>
     </tr>
   </tbody>
 </table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code>FileNotFoundError</code>
+              –
+              <div class="doc-md-description">
+                <p>error when CANalyzer config file not available in pc.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.quit" class="doc doc-heading">
+          <code class="highlight language-python">quit()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Quits the application.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.read_text_from_write_window" class="doc doc-heading">
+          <code class="highlight language-python">read_text_from_write_window()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>read the text contents from Write Window.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>str</code>
+            –
+            <div class="doc-md-description">
+              <p>The text content.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.reset_measurement" class="doc doc-heading">
+          <code class="highlight language-python">reset_measurement()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>reset the measurement.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>bool</code>
+            –
+            <div class="doc-md-description">
+              <p>Measurement running status(True/False).</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.reset_measurement_in_offline_mode" class="doc doc-heading">
+          <code class="highlight language-python">reset_measurement_in_offline_mode()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Resets the measurement in Offline mode.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.save_configuration" class="doc doc-heading">
+          <code class="highlight language-python">save_configuration()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Saves the configuration.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>bool</code>
+            –
+            <div class="doc-md-description">
+              <p>True if configuration saved. else False.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.save_configuration_as" class="doc doc-heading">
+          <code class="highlight language-python">save_configuration_as(path, major, minor, create_dir=True)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Saves the configuration as a different CANalyzer version.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>path</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The complete file name.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>major</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The major version number of the target version.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>minor</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>The minor version number of the target version.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>create_dir</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>create directory if not available. default value True.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>bool</code>
+            –
+            <div class="doc-md-description">
+              <p>True if configuration saved. else False.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.set_measurement_index" class="doc doc-heading">
+          <code class="highlight language-python">set_measurement_index(index)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>sets the measurement index for the next measurement.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>index</code></b>
+                  (<code>int</code>)
+              –
+              <div class="doc-md-description">
+                <p>index value to set.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>int</code>
+            –
+            <div class="doc-md-description">
+              <p>Measurement Index value.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.set_system_variable_array_values" class="doc doc-heading">
+          <code class="highlight language-python">set_system_variable_array_values(sys_var_name, value, index=0)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>set_system_variable_array_values sets array of values to system variable.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>sys_var_name</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the system variable. Ex- "sys_var_demo::speed"</p>
+              </div>
+            </li>
+            <li>
+              <b><code>value</code></b>
+                  (<code>tuple</code>)
+              –
+              <div class="doc-md-description">
+                <p>variable values. supported integer array or double array. please always give only one type.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>index</code></b>
+                  (<code>int</code>, default:
+                      <code>0</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>value of index where values will start updating. Defaults to 0.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.set_system_variable_value" class="doc doc-heading">
+          <code class="highlight language-python">set_system_variable_value(sys_var_name, value)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>set_system_variable_value sets a value to system variable.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>sys_var_name</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the system variable. Ex- "sys_var_demo::speed".</p>
+              </div>
+            </li>
+            <li>
+              <b><code>value</code></b>
+                  (<code><span title="typing.Union">Union</span>[int, float, str]</code>)
+              –
+              <div class="doc-md-description">
+                <p>variable value. supported CAPL system variable data types integer, double, string and data.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.start_measurement" class="doc doc-heading">
+          <code class="highlight language-python">start_measurement(timeout=60)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Starts the measurement.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>timeout</code></b>
+                  (<code>int</code>, default:
+                      <code>60</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>measurement start/stop event timeout in seconds. Defaults to 60.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>bool</code>
+            –
+            <div class="doc-md-description">
+              <p>True if measurement started. else False.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.start_measurement_in_animation_mode" class="doc doc-heading">
+          <code class="highlight language-python">start_measurement_in_animation_mode(animation_delay=100)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Starts the measurement in Animation mode.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>animation_delay</code></b>
+                  (<code>int</code>, default:
+                      <code>100</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>The animation delay during the measurement in Offline Mode.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.step_measurement_event_in_single_step" class="doc doc-heading">
+          <code class="highlight language-python">step_measurement_event_in_single_step()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Processes a measurement event in single step.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.stop_ex_measurement" class="doc doc-heading">
+          <code class="highlight language-python">stop_ex_measurement(timeout=60)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>StopEx repairs differences in the behavior of the Stop method on deferred stops concerning simulated and real mode in CANalyzer.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>timeout</code></b>
+                  (<code>int</code>, default:
+                      <code>60</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>measurement start/stop event timeout in seconds. Defaults to 60.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>bool</code>
+            –
+            <div class="doc-md-description">
+              <p>True if measurement stopped. else False.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.stop_measurement" class="doc doc-heading">
+          <code class="highlight language-python">stop_measurement(timeout=60)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Stops the measurement.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>timeout</code></b>
+                  (<code>int</code>, default:
+                      <code>60</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>measurement start/stop event timeout in seconds. Defaults to 60.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
+                <code>bool</code>
+            –
+            <div class="doc-md-description">
+              <p>True if measurement stopped. else False.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.ui_activate_desktop" class="doc doc-heading">
+          <code class="highlight language-python">ui_activate_desktop(name)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Activates the desktop with the given name.</p>
+
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>name</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>The name of the desktop to be activated.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.ui_open_baudrate_dialog" class="doc doc-heading">
+          <code class="highlight language-python">ui_open_baudrate_dialog()</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>opens the dialog for configuring the bus parameters. Make sure Measurement stopped when using this method.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="src.py_canalyzer.CANalyzer.write_text_in_write_window" class="doc doc-heading">
+          <code class="highlight language-python">write_text_in_write_window(text)</code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Outputs a line of text in the Write Window.
+Args:
+    text (str): The text.</p>
+
   </div>
 
 </div>
@@ -253,7 +2689,7 @@ You can reach all other methods from the CANalyzer class instance.</p>
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="about"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../004_usage/" class="btn btn-neutral float-left" title="usage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -276,7 +2712,7 @@ You can reach all other methods from the CANalyzer class instance.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../004_usage/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>

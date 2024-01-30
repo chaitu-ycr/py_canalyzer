@@ -2,12 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://chaitu-ycr.github.io/py_canalyzer/</loc>
-         <lastmod>2024-01-27</lastmod>
+         <lastmod>2024-01-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://chaitu-ycr.github.io/py_canalyzer/002_prerequisites/</loc>
+         <lastmod>2024-01-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://chaitu-ycr.github.io/py_canalyzer/003_environment_setup/</loc>
+         <lastmod>2024-01-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://chaitu-ycr.github.io/py_canalyzer/004_usage/</loc>
+         <lastmod>2024-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://chaitu-ycr.github.io/py_canalyzer/999_reference/</loc>
-         <lastmod>2024-01-27</lastmod>
+         <lastmod>2024-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
